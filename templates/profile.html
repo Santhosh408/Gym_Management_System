@@ -1,0 +1,85 @@
+{% extends 'rough.html' %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block navbar %}
+<li><a class="nav-link scrollto" href="/">Home</a></li>
+<li><a class="nav-link scrollto" href="/about">About</a></li>
+<li><a class="nav-link scrollto" href="/services">Services</a></li>
+<li><a class="nav-link scrollto" href="/gallery">Gallery</a></li>
+<li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+<li class="dropdown"><a  class="nav-link scrollto active"><span>Memberships</span> <i class="bi bi-chevron-down"></i></a>
+  <ul class="bg-dark text-white">
+    <li><a style="color: white;" href="/join">Enroll</a></li>
+    <li><a style="color: white;" href="/attendance">Attendance</a></li>
+    <li><a style="color: white;" href="/trainers">Trainers</a></li>
+    <li><a style="color: gold;" href="/profile">View Profile</a></li>
+  </ul>
+</li>
+{% endblock %}
+
+{% block head %}
+<h1 style="margin-top: 150px;">Enrollment Details</h1>
+<div class="container">
+  <div class="row">
+<div class="col-md-6" style="margin-top: 50px">
+
+  {% for post in posts %}
+      
+  <ul class="list-group" style="margin-top: -80px;">
+      <li class="list-group-item bg-dark text-white"><h6>Name: {{post.Fullname}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Email: {{post.Email}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Gender: {{post.Gender}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Phone Number: {{post.Phonenumber}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>DOB: {{post.DOB}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Membership Plan: {{post.Selectmembershipplan}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Trainer: {{post.Selecttrainer}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Address: {{post.Address}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Payment Status: {{post.PaymentStatus}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Amount Paid: {{post.Price}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Upcoming Due Date: {{post.Duedate}}</h6></li>
+      <li class="list-group-item bg-dark text-white"><h6>Joining Date: {{post.timestamp}}</h6></li>
+      
+  </ul>
+    {% endfor %}
+
+</div>
+    
+
+    <div class="col-md-6" style="margin-top: -50px;">
+        <div><Center><h2 class="display-4 mt-3"><b>Attendance Data</b></h2></Center></div>
+        
+        <table class="table mt-3">
+            <thead class="thead">
+              <tr>
+                
+                <th class="bg-dark text-white" scope="col">Date</th>
+                <th class="bg-dark text-white" scope="col">Login</th>
+                <th class="bg-dark text-white" scope="col">Logout</th>
+                <th class="bg-dark text-white" scope="col">Workout</th>
+                <th class="bg-dark text-white" scope="col">Trained By</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for attend in attendance %}
+              <tr>
+                
+                <td class="bg-dark text-white">{{attend.Selectdate}}</td>
+                <td class="bg-dark text-white">{{attend.Login}}</td>
+                <td class="bg-dark text-white">{{attend.Logout}}</td>
+                <td class="bg-dark text-white">{{attend.Selectworkout}}</td>
+                <td class="bg-dark text-white">{{attend.Trainedby}}</td>
+                
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        
+
+    </div> 
+  </div>
+</div>
+
+{% endblock %}

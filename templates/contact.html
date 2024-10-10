@@ -1,0 +1,68 @@
+{% extends 'rough.html' %}
+
+{% block title %}
+    Contact Us
+{% endblock %}
+
+{% block navbar %}
+<li><a class="nav-link scrollto" href="/">Home</a></li>
+<li><a class="nav-link scrollto" href="/about">About</a></li>
+<li><a class="nav-link scrollto" href="/services">Services</a></li>
+<li><a class="nav-link scrollto" href="/gallery">Gallery</a></li>
+<li><a class="nav-link scrollto active" href="/contact">Contact</a></li>
+<li class="dropdown"><a href="#"><span>Memberships</span> <i class="bi bi-chevron-down"></i></a>
+    <ul class="bg-dark text-white">
+        <li><a style="color: white;" href="/join">Enroll</a></li>
+        <li><a style="color: white;" href="/attendance">Attendance</a></li>
+        <li><a style="color: white;" href="/trainers">Trainers</a></li>
+        <li><a style="color: white;" href="/profile">View Profile</a></li>
+      </ul>
+    </li>
+{% endblock %}
+
+{% block head %}
+    <h1 style="margin-top: 200px;">Contact Us</h1>
+    <div class="container"></div>
+    <div class="row">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6">
+        
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            <strong></strong>{{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+        
+        {% endfor %}
+
+        <form action="/contact" method="post">{% csrf_token %}
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Enter Your Name " required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control mt-2" name="email" placeholder="Enter Your Email " required>
+            </div>
+
+            <div class="form-group">
+                <input type="number" class="form-control mt-2" name="num" placeholder="Enter Your Number " required>
+            </div>
+            
+            <div class="form-group">
+                <label for="desc" class="text-warning"><strong>How can I help you?</strong></label>
+                <textarea name="desc" cols="5" rows="3" id="desc" class="form-control mt-2"></textarea>
+            </div>
+
+            <br>
+            <div class="d-grid gap-2">
+                <button class="btn btn-warning" type="submit">Submit</button>
+            </div>
+        </form>
+        
+    </div> 
+    <div class="col-md-3">
+    </div>
+</div>
+{% endblock %}

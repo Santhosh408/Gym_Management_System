@@ -1,0 +1,188 @@
+{% extends 'rough.html' %}
+
+{% block title %}
+  Shoulder Workout
+{% endblock %}
+
+{% block navbar %}
+<li><a class="nav-link scrollto" href="/">Home</a></li>
+<li><a class="nav-link scrollto" href="/about">About</a></li>
+<li><a class="nav-link scrollto" href="/services">Services</a></li>
+<li><a class="nav-link scrollto" href="/gallery">Gallery</a></li>
+<li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+<li class="dropdown"><a href="#"><span>Memberships</span> <i class="bi bi-chevron-down"></i></a>
+    <ul class="bg-dark text-white">
+        <li><a style="color: white;" href="/join">Enroll</a></li>
+        <li><a style="color: white;" href="/attendance">Attendance</a></li>
+        <li><a style="color: white;" href="/trainers">Trainers</a></li>
+        <li><a style="color: white;" href="/profile">View Profile</a></li>
+      </ul>
+    </li>
+{% endblock %}
+
+{% block style %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          
+          body {
+            
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+            background-color: rgb(233, 164, 164);
+          }
+          .card {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+          }
+          .box {
+            transform-style: preserve-3d;
+            background-color: transparent;
+            min-height: 80vh;
+            width: 35rem;
+            border-radius: 30px;
+            padding: 0rem 5rem;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+          
+            backdrop-filter: blur(3 rem);
+          }
+          
+          .jordans {
+            min-height: 35vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .jordans img {
+            width: 20rem;
+            z-index: 2;
+            transition: all 0.75s ease-out;
+          }
+          .circle {
+            width: 15rem;
+            height: 15rem;
+            background: linear-gradient(
+              to right,
+              rgba(245, 70, 66, 0.75),
+              rgba(8, 83, 156, 0.75)
+            );
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+          }
+          .info {
+            padding: 15px;
+          }
+          
+          .info h1 {
+            font-size: 3rem;
+            text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+            transition: all 0.75s ease-out;
+            letter-spacing: 1px;
+          }
+          .info h3 {
+            font-size: 1.3rem;
+            padding: 2rem 0rem;
+            color: #585858;
+            font-weight: lighter;
+            transition: all 0.75s ease-out;
+          }
+          .sizes {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.75s ease-out;
+          }
+          
+          
+          
+          
+          
+          .circle {
+            box-shadow: 0 0 5px rgb(233, 164, 164), 0 0 25px rgb(233, 164, 164),
+              0 0 50px rgb(233, 164, 164), 0 0 100px rgb(233, 164, 164);
+          }
+          
+    </style>
+{% endblock %}
+
+{% block head %}
+<div class="row">
+<div class="col-md-6">
+  
+<div style="color:goldenrod;margin-top: 170px; margin-left:80px" class="card">
+    <div class="box">
+      <div style="margin-top: 70px;" class="jordans">
+        <!-- <div class="circle"></div> -->
+        <img src="static/assets/img/workouts/shoulder.jfif"  alt="euro" />
+      </div>
+      <div style="margin-top: 100px;" class="info">
+        <h1 style="color: white;" class="title">SHOULDER</h1>
+        
+      </div>
+    </div>
+  </div>
+</div>  
+<div class="col-md-6">
+  <h2 style="color:gold;margin-top: 200px;"> <strong>SHOULDER WORKOUT</strong> </h2>
+  <h4 style="margin-right:20px;color:white;margin-top: 40px;">
+    For an effective shoulder workout, it's crucial to incorporate a variety of exercises that target all three heads of the deltoid muscle for balanced development. Begin with compound movements such as overhead barbell or dumbbell presses to engage the entire shoulder complex. Focus on maintaining proper form, keeping the core engaged, and avoiding excessive arching of the lower back. Follow with lateral raises or upright rows to target the medial deltoids, helping to create width and definition in the shoulders. Incorporate front raises or Arnold presses to target the anterior deltoids, aiding in overall shoulder symmetry and development. 
+  </h4>
+</div>
+</div> 
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        const card = document.querySelector(".box");
+const container = document.querySelector(".card");
+
+const title = document.querySelector(".title");
+
+const jordans = document.querySelector(".jordans img");
+
+const purchase = document.querySelector(".purchase");
+
+const description = document.querySelector(".info h3");
+
+const sizes = document.querySelector(".sizes");
+
+container.addEventListener("mousemove", (e) => {
+  let xAxis = (window.innerWidth / 2 - e.pageX) / 10;
+  let yAxis = (window.innerHeight / 2 - e.pageY) / 10;
+  card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+  glare
+});
+
+container.addEventListener("mouseenter", (e) => {
+  card.style.transition = "0.2s ease";
+  
+  title.style.transform = "translateZ(150px)";
+  jordans.style.transform = "translateZ(200px) rotateZ(-45deg)";
+  description.style.transform = "translateZ(125px)";
+  sizes.style.transform = "translateZ(100px)";
+  purchase.style.transform = "translateZ(75px)";
+});
+
+container.addEventListener("mouseleave", (e) => {
+  card.style.transition = "all 0.2s ease";
+  card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  
+  title.style.transform = "translateZ(0px)";
+  jordans.style.transform = "translateZ(0px) rotateZ(0deg)";
+  description.style.transform = "translateZ(0px)";
+  sizes.style.transform = "translateZ(0px)";
+  purchase.style.transform = "translateZ(0px)";
+});
+    </script>
+{% endblock %}

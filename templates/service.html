@@ -1,0 +1,84 @@
+{% extends 'rough.html' %}
+{% load static %}
+
+{% block title %}
+    Services
+{% endblock %}
+
+{% block navbar %}
+<li><a class="nav-link scrollto" href="/">Home</a></li>
+<li><a class="nav-link scrollto" href="/about">About</a></li>
+<li><a class="nav-link scrollto active" href="/services">Services</a></li>
+<li><a class="nav-link scrollto" href="/gallery">Gallery</a></li>
+<li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+<li class="dropdown"><a href="#"><span>Memberships</span> <i class="bi bi-chevron-down"></i></a>
+  <ul class="bg-dark text-white">
+    <li><a style="color: white;" href="/join">Enroll</a></li>
+    <li><a style="color: white;" href="/attendance">Attendance</a></li>
+    <li><a style="color: white;" href="/trainers">Trainers</a></li>
+    <li><a style="color: white;" href="/profile">View Profile</a></li>
+  </ul>
+</li>
+{% endblock %}
+
+{% block head %}
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+        <h1 style="margin-top: 50px;"><b>SERVICES</b></h1>
+        
+
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box" id="sandy">
+              <div class="icon"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/curls-with-dumbbells.png" alt="curls-with-dumbbells"/></div>
+              <h4><a href="">Personal Training</a></h4>
+              <p>Offer personalized one-on-one training sessions tailored to individual fitness goals and needs.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box" id="sandy">
+              <div class="icon"><img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/group-foreground-selected.png" alt="group-foreground-selected"/></div>
+              <h4><a href="">Group Fitness Classes</a></h4>
+              <p>Provide a variety of group fitness classes such as Yoga,HIIT,spinning and Pilates, led by certified instructors.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box" id="sandy">
+              <div class="icon"><img width="48" height="48" src="https://img.icons8.com/color/48/protein-supplement.png" alt="protein-supplement"/></div>
+              <h4><a href="">Nutritional Counseling</a></h4>
+              <p>Offer Nutritional guidance and counseling sessions to help members develop healthy eating habits and achieve their fitness goals.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box" id="sandy">
+              <div class="icon"><i class="bx bx-slideshow"></i></div>
+              <h4><a href="">Virtual Workout Programs</a></h4>
+              <p>Introduce virtual workout programs for members who prefer to exercise from the comfort of their homes, featuring live-streamed classes and on-demand workouts.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box" id="sandy">
+              <div class="icon"><img width="64" height="64" src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/external-gym-fitness-and-gym-xnimrodx-lineal-xnimrodx-5.png" alt="external-gym-fitness-and-gym-xnimrodx-lineal-xnimrodx-5"/></div>
+              <h4><a href="">Specialized Workshops</a></h4>
+              <p>Organize specialized workshops on topics like injury prevention,stress management and mindfulness to support holistic well-being.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box" id="sandy">
+              <div class="icon"><img width="64" height="64" src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/external-gym-talent-management-flatart-icons-outline-flatarticons.png" alt="external-gym-talent-management-flatart-icons-outline-flatarticons"/></div>
+              <h4><a href="">Fitness Assessments</a></h4>
+              <p>Conduct comprehensive fitness assessments to evaluate members current fitness levels, track progress,and customize workout plans accrodingly.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+{% endblock %}

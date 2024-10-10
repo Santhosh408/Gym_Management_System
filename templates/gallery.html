@@ -1,0 +1,40 @@
+{% extends 'rough.html' %}
+
+{% block title %}
+    Gallery
+{% endblock %}
+
+{% block navbar %}
+<li><a class="nav-link scrollto" href="/">Home</a></li>
+<li><a class="nav-link scrollto" href="/about">About</a></li>
+<li><a class="nav-link scrollto" href="/services">Services</a></li>
+<li><a class="nav-link scrollto active" href="/gallery">Gallery</a></li>
+<li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+<li class="dropdown"><a href="#"><span>Memberships</span> <i class="bi bi-chevron-down"></i></a>
+    <ul class="bg-dark text-white">
+        <li><a style="color: white;" href="/join">Enroll</a></li>
+        <li><a style="color: white;" href="/attendance">Attendance</a></li>
+        <li><a style="color: white;" href="/trainers">Trainers</a></li>
+        <li><a style="color: white;" href="/profile">View Profile</a></li>
+      </ul>
+    </li>
+{% endblock %}
+    
+{% block head %}
+    <div style="margin-top: 100px;" class="container">
+        <h1>Gallery</h1>
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-xl-4 mt-4">
+                <div class="card">
+                    <img src="{{post.img.url}}" alt="" class="card-img-top">
+                    <div style="background-color:black" class="class-body">
+                        <h5 style="color:white" class="card-title">{{post.title}}</h5>
+                        <p style="color:white" class="card-text">Uploaded On: {{post.timestamp}} </p>
+                    </div>
+                </div>    
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

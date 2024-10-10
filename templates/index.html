@@ -1,0 +1,158 @@
+{% extends 'rough.html' %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block navbar %}
+<li><a class="nav-link scrollto active" href="/">Home</a></li>
+<li><a class="nav-link scrollto" href="/about">About</a></li>
+<li><a class="nav-link scrollto" href="/services">Services</a></li>
+<li><a class="nav-link scrollto" href="/gallery">Gallery</a></li>
+<li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+<li class="dropdown"><a  class="nav-link scrollto"><span>Memberships</span> <i class="bi bi-chevron-down"></i></a>
+  <ul class="bg-dark text-white">
+    <li><a style="color: white;" href="/join">Enroll</a></li>
+    <li><a style="color: white;" href="/attendance">Attendance</a></li>
+    <li><a style="color: white;" href="/trainers">Trainers</a></li>
+    <li><a style="color: white;" href="/profile">View Profile</a></li>
+  </ul>
+</li>
+
+{% endblock %}
+
+{% block style %}
+  <style>
+    .game-icons--shoulder-armor {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='m208 56.643l-16 64l-98.568 14.082L256 175.365l162.568-40.64L320 120.643l-16-64l-27.268 18.18l-12.002 48.003h-17.46l-12.002-48.004zm-138.621 90.62L16 200.644l48 64l25.77-25.77l26.619-79.857zm373.242 0l-47.01 11.753l26.62 79.857L448 264.643l48-64zm-308.717 16.132l-20.123 60.369l13.81 55.246L247 345.348V191.67zm244.192 0L265 191.67v153.678l119.408-66.338l13.81-55.246zM144 308.715v56.314l103 30.627v-29.719zm224 0l-103 57.223v29.718l103-30.627zm-224 75.54v56.388l103 14.714V414.88zm224 0L265 414.88v40.478l103-14.714z'/%3E%3C/svg%3E");
+      background-color: currentColor;
+      -webkit-mask-image: var(--svg);
+      mask-image: var(--svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+    }
+
+    .healthicons--gym {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M9 6a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h30a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3zm23 10h-3v16h3zm2 3h3v4h1v2h-1v4h-3zM16 32h3V16h-3zm-2-3h-3v-4h-1v-2h1v-4h3zm7-4h6v-2h-6z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      background-color: currentColor;
+      -webkit-mask-image: var(--svg);
+      mask-image: var(--svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+    }
+
+    .healthicons--exercise-yoga {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23000' d='M29 10a5 5 0 1 1-10 0a5 5 0 0 1 10 0m2 33a1 1 0 0 1-1 1H12.856a2.856 2.856 0 0 1-1.507-5.282l5.284-3.282a3 3 0 0 0 1.417-2.548V32h2.374a4 4 0 0 0 2.828-1.172l.748-.747l.747.747A4 4 0 0 0 27.577 32H30v.892a3 3 0 0 0 1.41 2.543l5.246 3.279A2.86 2.86 0 0 1 35.14 44h-2.31c.11-.313.17-.65.17-1v-.25a3 3 0 0 0-2.602-2.973l-13.215-1.768a1 1 0 0 0-.266 1.982l13.216 1.768a1 1 0 0 1 .867.991zm-4.838-13.586L25 28.252V24.51c.148.086.288.192.414.318l1.879 1.88A1 1 0 0 0 28 27h3a1 1 0 0 0 .894-1.447l-1-2a1 1 0 1 0-1.788.894l.276.553h-.968l-1.586-1.586a4 4 0 0 0-5.656 0L19.586 25h-.968l.276-.553a1 1 0 1 0-1.788-.894l-1 2A1 1 0 0 0 17 27h3a1 1 0 0 0 .707-.293l1.879-1.879c.127-.126.266-.232.414-.318v3.742l-1.162 1.162a2 2 0 0 1-1.414.586h-6.038a2 2 0 0 1-1.864-2.725l3.004-7.725A4 4 0 0 1 19.254 17h9.492a4 4 0 0 1 3.728 2.55l3.005 7.725A2 2 0 0 1 33.613 30h-6.038a2 2 0 0 1-1.414-.586'/%3E%3C/svg%3E");
+      background-color: currentColor;
+      -webkit-mask-image: var(--svg);
+      mask-image: var(--svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+    }
+
+    .game-icons--leg-armor {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='M128 22.781c-11.101 10.941-19.822 27.6-26.076 41.203c6.044 20.063 11.083 40.869 27.539 54.926c18.862-14.015 27.05-33.752 35.187-56.351C154.631 51.155 144.412 34.368 128 22.78zm256 0c-16.412 11.587-26.631 28.374-36.65 39.778c8.137 22.599 16.325 42.336 35.187 56.351c16.456-14.057 21.495-34.863 27.54-54.926C403.821 50.381 395.1 33.722 384 22.781M222.23 46.104c-11.546 2.749-24.948 7.229-37.04 12.68c-8.622 28.9-21.924 55.363-45.965 74.734l16.55 177.107l-19.933-8.438l-14.61-167.787c-16.163-16.006-28.001-43.023-38.39-71.285c-3.545-2.304-7.083-4.15-10.621-5.424c6.237 82.926 25.341 186.732 47.006 274.592c2.544-1.159 5.746-2.4 8.724-3.459c29.464 7.318 56.995 29.357 81.848 53.067C192 272 256 160 222.23 46.104m67.54 0C256 160 320 272 302.2 381.89c24.853-23.71 52.384-45.75 81.848-53.067c2.978 1.06 6.18 2.3 8.724 3.46c21.665-87.86 40.77-191.667 47.006-274.593c-3.538 1.274-7.076 3.12-10.62 5.424c-10.39 28.262-22.228 55.28-38.391 71.285l-14.61 167.787l-19.933 8.438l16.55-177.107c-24.04-19.37-37.343-45.834-45.964-74.735c-12.093-5.45-25.495-9.93-37.041-12.68zM129.004 347.83c-13.31 5.672-27.915 18.355-33.014 34.666c23.725 4.679 52.808 18.407 75.524 40.389l3.947 26.867l33.467-12.074l-1.33-29.082c-19.75-28.701-51.073-52.92-78.594-60.766m253.992 0c-27.52 7.846-58.843 32.065-78.594 60.766l-1.33 29.082l33.467 12.074l3.947-26.867c22.716-21.982 51.8-35.71 75.524-40.389c-5.099-16.311-19.704-28.994-33.014-34.666M90.69 399.703l-52.257 39.272c-10.312 15.251-12.923 32.609-8.657 47.158c52.559 9.293 88.252-3.287 129.043-25.838l-4.275-29.084c-14.703-15.135-33.665-26.354-63.854-31.508m330.622 0c-30.189 5.154-49.151 16.373-63.854 31.508l-4.275 29.084c40.791 22.55 76.484 35.131 129.043 25.838c4.266-14.55 1.655-31.907-8.657-47.158z'/%3E%3C/svg%3E");
+      background-color: currentColor;
+      -webkit-mask-image: var(--svg);
+      mask-image: var(--svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+    }
+
+    .game-icons--biceps {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='M211.832 39.06c-15.022 15.31-15.894 22.83-23.473 43.903c2.69 9.14 5.154 16.927 9.148 25.117c5.158.283 10.765.47 15.342.43c-6.11-10.208-8.276-19.32-4.733-35.274c4.3 19.05 12.847 29.993 21.203 34.332c3.032-.334 5.957-.714 8.776-1.146c-6.255-10.337-8.494-19.47-4.914-35.588c3.897 17.27 11.287 27.876 18.86 32.94c4.658-1.043 9.283-2.243 13.927-3.534c-5.517-9.69-7.36-18.692-3.97-33.957c3.357 14.876 9.307 24.81 15.732 30.516a1528.16 1528.16 0 0 0 13.852-4.347c-.685-5.782-.416-12.187 1.064-19.115l1.883-8.8l17.603 3.76l-1.88 8.804c-3.636 17.008 1.324 24.42 7.306 28.666c5.98 4.244 14.69 3.46 16.03 2.6l7.576-4.86l9.72 15.15c-3.857 2.34-7.9 5.44-11.822 7.06c18.65 27.678 32.183 61.465 24.756 93.55c-2.365 9.474-6.03 18.243-11.715 24.986c12.725 12.13 21.215 22.026 31.032 34.5a691.95 691.95 0 0 0-11.692-7.37c-11.397-7.01-23.832-14.214-34.98-19.802c-16.012-7.8-31.367-18.205-47.73-20.523c-22.552-2.967-46.27 4.797-73.32 21.06c7.872 8.72 13.282 15.474 20.312 24.288c-6.98-4.338-14.652-9.07-23.16-14.23c-32.554-17.48-65.39-48.227-100.438-49.99c-30.56-1.092-59.952 14.955-89.677 38.568L18 254.293V494h31.963c45.184-17.437 80.287-57.654 97.03-94.52l.25-.564l.325-.52c9.463-15.252 11.148-29.688 16.79-44.732c5.645-15.044 16.907-29.718 41.884-38.756c4.353-2.16 5.07-1.415 8.633 1.395c30.468 24.01 57.29 32.02 83.24 32.35c32.61-1.557 58.442-9.882 85.682-19.38c-3.966 3.528-8.77 7.21-13.986 10.762c-15.323 10.436-34.217 19.928-46.304 24.8c-14.716 2.006-28.36 2.416-41.967.616c-9.96 12.09-25.574 20.358-37.35 26.673c63.92 14.023 115.88.91 167.386-22.896c-9.522-1.817-19.008-3.692-27.994-5.42c31.634-4.422 64.984-3.766 94.705-3.53c4.084-.02 7.213-.453 8.7-.886c14.167-51.072-4.095-97.893-34.294-145.216c-30.263-47.425-72.18-94.107-101.896-143.04c-21.1-17.257-48.6-31.455-77.522-46.175c-20.386 4.25-41.026 9.336-61.443 14.1zm85.385 70.49c-11.678 3.6-23.71 7.425-33.852 10.012c2.527 4.93 3.735 10.664 3.395 16.202c11.028.877 21.082-2.018 28.965-6.356c4.845-2.666 8.74-6.048 11.414-8.96c-3.854-2.735-7.26-6.41-9.923-10.9zm-54.213 14.698c-11.76 1.143-24.59 2.362-35.06 2.236c2.39 4.772 3.78 12.067 8.51 14.84c11.18 1.164 20.6 1.997 29.91-1.746c5.435-3.214 1.818-15.058-3.36-15.33m-34.98 209.332c-17.593 7.233-22.586 15.14-26.813 26.406c-3.998 10.66-6.227 25.076-14.48 41.014c32.29-6.38 69.625-21.23 93.852-40.088c-17.017-5.098-34.553-13.852-52.557-27.332zm9.318 71.385c-18.723 7.237-40.836 16.144-59.696 14.062C143.774 446.68 124.012 474.03 91.762 494h84.68c21.564-29.798 38.067-56.575 40.9-89.035'/%3E%3C/svg%3E");
+      background-color: currentColor;
+      -webkit-mask-image: var(--svg);
+      mask-image: var(--svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+    }
+
+    .twemoji--flexed-biceps {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23ef9645' d='M15.977 9.36h3.789a.777.777 0 0 0 .058-.673l-3.846-4.705V9.36z'/%3E%3Cpath fill='%23ffdc5d' d='M12.804 22.277a9.192 9.192 0 0 0-.206-.973c-.62-2.223-1.14-3.164-.918-5.494c.29-1.584.273-4.763 4.483-4.268c1.112.131 2.843.927 3.834.91c.567-.01.98-1.157 1.017-1.539c.051-.526-.865-1.42-1.248-1.554a94.35 94.35 0 0 0-2.681-.824c-1.039-.301-.985-1.705-1.051-2.205a.597.597 0 0 1 .294-.591c.21-.124.375-.008.579.125l.885.648c.497.426-.874 1.24-.503 1.376c0 0 1.755.659 2.507.796c.412.075 1.834-1.529 1.917-2.47c.065-.74-3.398-4.083-5.867-5.381c-.868-.456-1.377-.721-1.949-.694c-.683.032-.898.302-1.748 1.03C8.302 4.46 4.568 11.577 4.02 13.152c-2.246 6.461-2.597 9.865-2.677 11.788a21.26 21.26 0 0 0-.076 1.758c.065 0-1 5 0 6s5.326 1 5.326 1c10 3.989 28.57 2.948 28.57-7.233c0-12.172-18.813-10.557-22.359-4.188'/%3E%3Cpath fill='%23ef9645' d='M20.63 32.078c-3.16-.332-5.628-1.881-5.767-1.97a1 1 0 0 1 1.075-1.687c.04.025 4.003 2.492 7.846 1.467c2.125-.566 3.867-2.115 5.177-4.601a1 1 0 0 1 1.77.932c-1.585 3.006-3.754 4.893-6.447 5.606c-1.257.332-2.502.374-3.654.253'/%3E%3C/svg%3E");
+    }
+  </style>
+{% endblock %}
+
+
+{% block head %}
+<h1  style="margin-top: 150px;color:gold">KRATOS FITNESS STUDIO</h1><br>
+<h2><strong>JOIN US</strong></h2>
+<h2 style="margin-top: 20px;">Start Now Stop Never</h2>
+</div>
+</div>
+
+<div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+<div class="col-xl-2 col-md-12">
+<div class="icon-box">
+  <i class="twemoji--flexed-biceps"></i>
+  <h3><a href="/biceps">Biceps</a></h3>
+</div>
+</div>
+<div class="col-xl-2 col-md-4">
+<div class="icon-box">
+  <i class="healthicons--gym"></i>
+  <h3><a href="/back">Back</a></h3>
+</div>
+</div>
+<div class="col-xl-2 col-md-4">
+<div class="icon-box">
+  <i class="game-icons--shoulder-armor"></i>
+  <h3><a href="/shoulder">Shoulders</a></h3>
+</div>
+</div>
+<div class="col-xl-2 col-md-4">
+<div class="icon-box">
+  <i class="healthicons--exercise-yoga"></i>
+  <h3><a href="/chest">Chest</a></h3>
+</div>
+</div>
+<div class="col-xl-2 col-md-4">
+<div class="icon-box">
+  <i class="game-icons--leg-armor"></i>
+  <h3><a href="/legs">Legs</a></h3>
+</div>
+</div>
+<div class="col-xl-2 col-md-4">
+  <div class="icon-box">
+    <i class="game-icons--biceps"></i>
+    <h3><a href="/triceps">Triceps</a></h3>
+</div>
+</div>
+{% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+{% endfor %}
+{% endblock %}
